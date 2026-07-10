@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOBIE CAT 新潟フリート｜日本海の風を操るセーリングクラブ</title>
+<meta name="description" content="新潟市西海岸を拠点に、ホビーキャット（双胴カタマラン）でセーリングを楽しむヨットクラブ。20代からベテランまで、初心者歓迎。2026シーズンの新入会員を募集中。">
+<meta name="keywords" content="ヨット,ディンギー,カタマラン,ホビーキャット,HOBIE CAT,新潟,ヨットクラブ,セイリング,マリンスポーツ,日本海,双胴艇">
+<meta property="og:title" content="HOBIE CAT 新潟フリート">
+<meta property="og:description" content="日本海の風を操る。新潟のホビーキャット・セーリングクラブ。2026新入会員募集中。">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --navy:#04173a;
+    --navy-2:#0a2a5e;
+    --blue:#1763c9;
+    --sky:#31a8e0;
+    --cyan:#3fd0d4;
+    --sand:#f4ede0;
+    --ink:#0d1b2a;
+    --muted:#5b6b80;
+    --line:#e4e9f0;
+    --white:#ffffff;
+    --wash:#f6f9fc;
+    --radius:18px;
+    --shadow:0 18px 50px -20px rgba(6,30,72,.35);
+    --font:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1140px,92vw);margin-inline:auto}
+  section{position:relative}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:700;padding:.95em 1.9em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s;letter-spacing:.02em;font-size:.98rem;cursor:pointer;border:none}
+  .btn-primary{background:linear-gradient(120deg,var(--sky),var(--cyan));color:#032137;box-shadow:0 14px 30px -12px rgba(63,208,212,.7)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 40px -12px rgba(63,208,212,.85)}
+  .btn-ghost{background:rgba(255,255,255,.09);color:#fff;border:1.5px solid rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+  .btn-ghost:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
+  .btn-dark{background:var(--navy);color:#fff}
+  .btn-dark:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+
+  /* ---------- header ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:60;transition:.35s}
+  header .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;letter-spacing:.04em;transition:color .35s}
+  .logo .mark{width:40px;height:40px;flex:none}
+  .logo b{font-size:1.05rem;line-height:1.2;display:block}
+  .logo span{font-size:.66rem;font-weight:600;letter-spacing:.28em;opacity:.8;display:block}
+  nav.main{display:flex;align-items:center;gap:30px}
+  nav.main a.link{color:#fff;font-weight:600;font-size:.92rem;opacity:.9;transition:.25s;position:relative}
+  nav.main a.link::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--cyan);transition:.3s}
+  nav.main a.link:hover{opacity:1}
+  nav.main a.link:hover::after{width:100%}
+  header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 6px 24px -14px rgba(6,30,72,.4)}
+  header.scrolled .logo,header.scrolled nav.main a.link{color:var(--ink)}
+  header.scrolled .logo span{opacity:.55}
+  .nav-cta{padding:.6em 1.3em;font-size:.86rem}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+  .menu-btn span{width:26px;height:2px;background:#fff;transition:.3s;border-radius:2px}
+  header.scrolled .menu-btn span{background:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;color:#fff;position:relative;overflow:hidden;background:linear-gradient(160deg,#04122f 0%,#0a2a5e 45%,#12508f 100%)}
+  .hero .sea{position:absolute;inset:0;z-index:0}
+  .hero-content{position:relative;z-index:3;padding-top:90px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:26px}
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--cyan)}
+  .hero h1{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.12;letter-spacing:.01em;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+  .hero h1 .accent{background:linear-gradient(100deg,var(--cyan),#9df6d6);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.lead{font-size:clamp(1rem,1.7vw,1.2rem);max-width:37ch;margin:26px 0 40px;color:rgba(255,255,255,.9);line-height:1.9}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:40px;margin-top:60px;flex-wrap:wrap}
+  .hero-stats .st b{font-size:2rem;font-weight:900;color:#fff;display:block;line-height:1}
+  .hero-stats .st span{font-size:.8rem;letter-spacing:.08em;color:rgba(255,255,255,.72)}
+  .scroll-ind{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.7);font-size:.7rem;letter-spacing:.3em;text-align:center}
+  .scroll-ind .dot{width:22px;height:36px;border:2px solid rgba(255,255,255,.5);border-radius:14px;margin:0 auto 8px;position:relative}
+  .scroll-ind .dot::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:4px;height:8px;background:var(--cyan);border-radius:2px;animation:scrolldot 1.6s infinite}
+  @keyframes scrolldot{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}80%{opacity:0;transform:translate(-50%,12px)}}
+  .sail{animation:sail 9s ease-in-out infinite}
+  @keyframes sail{0%,100%{transform:translateX(0) rotate(0deg)}50%{transform:translateX(26px) rotate(-1.2deg)}}
+  .wave-a{animation:wave 7s ease-in-out infinite}
+  .wave-b{animation:wave 9s ease-in-out infinite reverse}
+  @keyframes wave{0%,100%{transform:translateX(0)}50%{transform:translateX(-24px)}}
+
+  /* ---------- section shell ---------- */
+  .sec{padding:110px 0}
+  .sec-head{max-width:720px;margin-bottom:56px}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:800;letter-spacing:.2em;color:var(--blue);text-transform:uppercase;margin-bottom:16px}
+  .kicker::before{content:"";width:26px;height:2px;background:var(--blue)}
+  .sec-head h2{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:900;line-height:1.25;letter-spacing:.01em}
+  .sec-head h2 em{font-style:normal;color:var(--blue)}
+  .sec-head p{margin-top:18px;color:var(--muted);font-size:1.02rem}
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- about ---------- */
+  #about{background:var(--wash)}
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .about-copy h3{font-size:1.5rem;font-weight:800;margin-bottom:18px;line-height:1.5}
+  .about-copy p{color:#3a4a5e;margin-bottom:16px}
+  .about-copy .name-tip{background:#fff;border-left:4px solid var(--cyan);padding:16px 20px;border-radius:0 12px 12px 0;font-size:.95rem;color:#455;box-shadow:var(--shadow)}
+  .about-visual{position:relative;aspect-ratio:4/3.4;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#0a2a5e,#12508f);box-shadow:var(--shadow)}
+  .about-visual .tag{position:absolute;left:20px;bottom:20px;z-index:2;background:rgba(255,255,255,.94);padding:12px 18px;border-radius:12px;font-weight:800;font-size:.9rem;color:var(--navy)}
+  .about-visual .tag small{display:block;font-weight:600;color:var(--muted);font-size:.72rem;letter-spacing:.1em}
+
+  /* ---------- features ---------- */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .feat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;transition:.35s}
+  .feat:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+  .feat .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--sky),var(--cyan));margin-bottom:22px}
+  .feat h4{font-size:1.2rem;font-weight:800;margin-bottom:10px}
+  .feat p{color:var(--muted);font-size:.95rem}
+
+  /* ---------- info strip ---------- */
+  .info-band{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--navy);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+  .info-band .cell{padding:38px 30px;color:#fff;border-right:1px solid rgba(255,255,255,.09)}
+  .info-band .cell:last-child{border-right:none}
+  .info-band .cell .lb{font-size:.75rem;letter-spacing:.18em;color:var(--cyan);font-weight:700;margin-bottom:12px}
+  .info-band .cell .vl{font-size:1.32rem;font-weight:800;line-height:1.4}
+  .info-band .cell .vl small{display:block;font-size:.82rem;font-weight:500;color:rgba(255,255,255,.65);margin-top:6px}
+
+  /* ---------- membership ---------- */
+  #join{background:linear-gradient(165deg,#04122f,#0a2a5e 60%,#0d3a72);color:#fff;overflow:hidden;position:relative}
+  #join .glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(63,208,212,.28),transparent 70%);top:-140px;right:-120px;pointer-events:none}
+  #join .sec-head h2 em{color:var(--cyan)}
+  #join .sec-head p{color:rgba(255,255,255,.78)}
+  .join-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+  .price-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:38px 34px;backdrop-filter:blur(6px)}
+  .price-card h4{font-size:1.15rem;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .price-card .sub{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:26px}
+  .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px dashed rgba(255,255,255,.16)}
+  .price-row:last-child{border-bottom:none}
+  .price-row .k{font-weight:600;color:rgba(255,255,255,.85)}
+  .price-row .v{font-weight:900;font-size:1.5rem}
+  .price-row .v small{font-size:.8rem;font-weight:600;color:var(--cyan);margin-left:4px}
+  .join-pitch{display:flex;flex-direction:column;justify-content:center}
+  .join-pitch ul{list-style:none;margin:8px 0 30px}
+  .join-pitch li{display:flex;gap:14px;align-items:flex-start;padding:11px 0;font-size:1rem;color:rgba(255,255,255,.92)}
+  .join-pitch li svg{flex:none;margin-top:4px}
+  .join-pitch .hl{color:var(--cyan);font-weight:800}
+  .join-note{font-size:.82rem;color:rgba(255,255,255,.55);margin-top:20px}
+
+  /* ---------- diary / timeline ---------- */
+  .diary-list{display:grid;gap:0;border-top:1px solid var(--line)}
+  .diary{display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);transition:.3s}
+  .diary:hover{background:var(--wash);padding-inline:22px}
+  .diary .date{font-weight:800;color:var(--blue);font-size:.95rem;letter-spacing:.03em}
+  .diary .date small{display:block;color:var(--muted);font-weight:600;font-size:.72rem}
+  .diary .ttl{font-weight:700;font-size:1.08rem}
+  .diary .meta{font-size:.82rem;color:var(--muted);margin-top:4px}
+  .diary .go{color:var(--blue);font-weight:700;font-size:.85rem;white-space:nowrap;opacity:.5;transition:.3s}
+  .diary:hover .go{opacity:1;transform:translateX(4px)}
+  .diary-foot{margin-top:40px;display:flex;gap:16px;flex-wrap:wrap}
+
+  /* ---------- access ---------- */
+  #access{background:var(--wash)}
+  .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .access-info h3{font-size:1.5rem;font-weight:800;margin-bottom:20px}
+  .access-list{list-style:none}
+  .access-list li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .access-list li .ic{width:44px;height:44px;flex:none;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center}
+  .access-list li b{display:block;font-size:1rem}
+  .access-list li span{color:var(--muted);font-size:.9rem}
+  .access-map{aspect-ratio:1/1;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);position:relative;background:linear-gradient(160deg,#0a2a5e,#12508f)}
+  .access-map .pin{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#fff}
+  .weather-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .weather-links a{background:#fff;border:1px solid var(--line);border-radius:100px;padding:.6em 1.3em;font-size:.85rem;font-weight:700;color:var(--navy-2);transition:.25s}
+  .weather-links a:hover{border-color:var(--sky);color:var(--blue);transform:translateY(-2px)}
+
+  /* ---------- CTA final ---------- */
+  #cta{background:var(--navy);color:#fff;text-align:center;padding:120px 0}
+  #cta h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.3;margin-bottom:22px}
+  #cta h2 .accent{color:var(--cyan)}
+  #cta p{color:rgba(255,255,255,.78);max-width:44ch;margin:0 auto 40px;font-size:1.05rem}
+  #cta .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  /* ---------- footer ---------- */
+  footer{background:#030d24;color:rgba(255,255,255,.7);padding:70px 0 40px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-brand .logo{color:#fff;margin-bottom:18px}
+  .foot-brand p{font-size:.9rem;line-height:1.9;color:rgba(255,255,255,.55)}
+  .foot-col h5{color:#fff;font-size:.85rem;letter-spacing:.14em;margin-bottom:18px;font-weight:800}
+  .foot-col a{display:block;font-size:.9rem;padding:6px 0;color:rgba(255,255,255,.6);transition:.25s}
+  .foot-col a:hover{color:var(--cyan);transform:translateX(3px)}
+  .copy{padding-top:30px;font-size:.78rem;color:rgba(255,255,255,.4);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .about-grid,.join-grid,.access-grid{grid-template-columns:1fr;gap:36px}
+    .feat-grid{grid-template-columns:1fr 1fr}
+    .info-band{grid-template-columns:1fr 1fr}
+    .info-band .cell:nth-child(2){border-right:none}
+    .info-band .cell{border-bottom:1px solid rgba(255,255,255,.09)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    nav.main{position:fixed;inset:0 0 0 auto;width:76%;max-width:320px;background:var(--navy);flex-direction:column;justify-content:center;align-items:flex-start;padding:40px;gap:22px;transform:translateX(100%);transition:.4s;box-shadow:-20px 0 60px rgba(0,0,0,.4)}
+    nav.main.open{transform:none}
+    nav.main a.link{color:#fff!important;font-size:1.1rem}
+    nav.main .nav-cta{margin-top:10px}
+    .menu-btn{display:flex;z-index:70}
+    header.menuopen .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    header.menuopen .menu-btn span:nth-child(2){opacity:0}
+    header.menuopen .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    header.menuopen .menu-btn span{background:#fff!important}
+    .sec{padding:80px 0}
+    .feat-grid{grid-template-columns:1fr}
+    .info-band{grid-template-columns:1fr}
+    .info-band .cell{border-right:none}
+    .diary{grid-template-columns:1fr;gap:8px}
+    .diary .go{display:none}
+    .foot-grid{grid-template-columns:1fr}
+    .hero-stats{gap:26px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="hdr">
+  <div class="wrap bar">
+    <a href="#top" class="logo">
+      <svg class="mark" viewBox="0 0 48 48" fill="none"><path d="M24 4 L38 34 H10 Z" fill="url(#lg)"/><path d="M24 10 L24 34" stroke="#fff" stroke-width="2" opacity=".6"/><path d="M8 38 q6 4 12 0 t12 0 t12 0" stroke="#3fd0d4" stroke-width="2.4" fill="none"/><defs><linearGradient id="lg" x1="10" y1="4" x2="38" y2="34"><stop stop-color="#31a8e0"/><stop offset="1" stop-color="#3fd0d4"/></linearGradient></defs></svg>
+      <span class="lt"><b>HOBIE CAT</b><span>NIIGATA FLEET</span></span>
+    </a>
+    <nav class="main" id="nav">
+      <a class="link" href="#about">クラブ紹介</a>
+      <a class="link" href="#activity">活動</a>
+      <a class="link" href="#join">会員募集</a>
+      <a class="link" href="#diary">活動記録</a>
+      <a class="link" href="#access">アクセス</a>
+      <a class="btn btn-primary nav-cta" href="https://form1ssl.fc2.com/form/?id=b3fd7f91f4f64539" target="_blank" rel="noopener">お問い合わせ</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="sea">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#04122f"/><stop offset="1" stop-color="#12508f"/></linearGradient>
+        <linearGradient id="w1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d3a72"/><stop offset="1" stop-color="#0a2a5e"/></linearGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#sky)"/>
+      <circle cx="1180" cy="180" r="70" fill="#dff6ff" opacity=".14"/>
+      <circle cx="1180" cy="180" r="46" fill="#eafcff" opacity=".16"/>
+      <!-- sailboat -->
+      <g class="sail" transform="translate(300 430)">
+        <path d="M0 0 L0 -150 L108 0 Z" fill="#3fd0d4" opacity=".92"/>
+        <path d="M-6 0 L-6 -132 L-92 0 Z" fill="#9df6d6" opacity=".82"/>
+        <rect x="-3" y="-152" width="4" height="158" fill="#eafcff" opacity=".7"/>
+        <path d="M-96 2 L112 2 L96 26 L-80 26 Z" fill="#04122f"/>
+      </g>
+      <!-- waves -->
+      <path class="wave-b" d="M-100 640 q180 -46 360 0 t360 0 t360 0 t360 0 v300 h-1500 Z" fill="url(#w1)" opacity=".55"/>
+      <path class="wave-a" d="M-100 710 q180 -50 360 0 t360 0 t360 0 t360 0 v260 h-1500 Z" fill="#0a2a5e" opacity=".8"/>
+      <path class="wave-b" d="M-100 780 q180 -42 360 0 t360 0 t360 0 t360 0 v200 h-1500 Z" fill="#04122f"/>
+    </svg>
+  </div>
+  <div class="wrap hero-content">
+    <span class="eyebrow">Niigata Hobie Cat Sailing Club</span>
+    <h1>日本海の風を、<br><span class="accent">自分の手で操る。</span></h1>
+    <p class="lead">新潟市・西海岸を拠点に、双胴ヨット「ホビーキャット」でセーリングを楽しむクラブ。20代からベテランまで、初心者も1シーズンで独り立ちできます。</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#join">2026 新入会員募集 ▸</a>
+      <a class="btn btn-ghost" href="https://form1ssl.fc2.com/form/?id=b3fd7f91f4f64539" target="_blank" rel="noopener">ヨット体験を申し込む</a>
+    </div>
+    <div class="hero-stats">
+      <div class="st"><b>1998<span style="font-size:1rem">-</span></b><span>活動開始（クラブ）</span></div>
+      <div class="st"><b>10<span style="font-size:1rem">数名</span></b><span>アクティブ会員</span></div>
+      <div class="st"><b>4–10<span style="font-size:1rem">月</span></b><span>セーリングシーズン</span></div>
+    </div>
+  </div>
+  <div class="scroll-ind"><div class="dot"></div>SCROLL</div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <span class="kicker">What is Hobie Cat</span>
+        <h3>ホビーキャットって、何？</h3>
+        <p>アメリカで生まれたヨットの一種。考案者「ホビー・アルター」の名にちなんで名づけられた双胴（カタマラン）の帆走艇です。「趣味の猫」ではありません（笑）。</p>
+        <p>私たちのクラブは、その中でも最もオーソドックスなスタイルの <b>「ホビー16フィート」</b> クラスを中心にセーリングを楽しんでいます。左右に張られたトランポリンに乗り、風を受けて海面を滑走する——双胴艇ならではの加速と爽快感は、一生モノの体験です。</p>
+        <div class="name-tip">🐈 少しでも興味を持ったら、まずは一度、海に遊びに来てください。実際のホビーキャットに近寄って見るのがいちばんの近道です。</div>
+        <div style="margin-top:26px;display:flex;gap:14px;flex-wrap:wrap">
+          <a class="btn btn-dark" href="https://www.hobiecat.com/" target="_blank" rel="noopener">HOBIE CAT 公式 ↗</a>
+          <a class="btn btn-dark" href="https://www.youtube.com/watch?v=27ojzS32ZM8" target="_blank" rel="noopener" style="background:#c0392b">▶ 走行動画（YouTube）</a>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <svg viewBox="0 0 400 340" style="position:absolute;inset:0;width:100%;height:100%">
+          <defs><linearGradient id="av" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12508f"/><stop offset="1" stop-color="#0a2a5e"/></linearGradient></defs>
+          <rect width="400" height="340" fill="url(#av)"/>
+          <circle cx="320" cy="70" r="34" fill="#eafcff" opacity=".18"/>
+          <g transform="translate(150 150)">
+            <path d="M0 0 L0 -120 L88 0 Z" fill="#3fd0d4"/>
+            <path d="M-5 0 L-5 -104 L-74 0 Z" fill="#9df6d6" opacity=".9"/>
+            <rect x="-2" y="-122" width="3" height="124" fill="#eafcff"/>
+            <path d="M-78 3 L92 3 L78 22 L-64 22 Z" fill="#04122f"/>
+          </g>
+          <path d="M0 250 q100 -30 200 0 t200 0 v90 H0 Z" fill="#0a2a5e" opacity=".6"/>
+          <path d="M0 285 q100 -26 200 0 t200 0 v55 H0 Z" fill="#04122f"/>
+        </svg>
+        <div class="tag">Hobie 16<small>OUR MAIN CLASS</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITY / FEATURES ============ -->
+<section class="sec" id="activity" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">How we play</span>
+      <h2>楽しみ方は、<em>人それぞれ。</em></h2>
+      <p>海の遊びだけにとどまらず、1998年からは通年で活動するアウトドアクラブに。自分のペースで、好きなスタイルで参加できます。</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 20 L12 4 L12 20 Z" fill="#fff"/><path d="M13 20 L20 8 L13 8 Z" fill="#fff" opacity=".7"/></svg></div>
+        <h4>セーリング</h4>
+        <p>レースに出て目立つもよし、海でゆっくり昼寝を楽しむもよし。風を操る本気も、のんびりも、どちらも大歓迎です。</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 3 L21 20 H3 Z" fill="#fff"/><rect x="11" y="14" width="2" height="6" fill="#0a2a5e"/></svg></div>
+        <h4>アウトドア</h4>
+        <p>キャンプ・スキー・温泉まで。海のオフシーズンも、仲間と季節ごとのアウトドアを年間を通じて楽しんでいます。</p>
+      </div>
+      <div class="feat reveal">
+        <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3.4" fill="#fff"/><circle cx="16" cy="9" r="3.4" fill="#fff" opacity=".75"/><path d="M2 20 c0-4 3-6 6-6 s6 2 6 6 M10 20 c0-4 3-6 6-6 s6 2 6 6" fill="#fff" opacity=".9"/></svg></div>
+        <h4>仲間との出会い</h4>
+        <p>現在の会員は十数名。20代からベテランまで「楽しさ」をモットーに活動中。海を通じた一生モノの仲間ができます。</p>
+      </div>
+    </div>
+
+    <div class="info-band reveal" style="margin-top:60px">
+      <div class="cell"><div class="lb">SEASON</div><div class="vl">4月 – 10月上旬<small>主な活動シーズン</small></div></div>
+      <div class="cell"><div class="lb">BASE</div><div class="vl">新潟市 西海岸<small>通称：上新栄町浜</small></div></div>
+      <div class="cell"><div class="lb">MEMBERS</div><div class="vl">十数名<small>自分のペースで参加OK</small></div></div>
+      <div class="cell"><div class="lb">MAIN BOAT</div><div class="vl">Hobie 16<small>双胴カタマラン</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMBERSHIP ============ -->
+<section class="sec" id="join">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker" style="color:var(--cyan)">Join us · 2026</span>
+      <h2>2026シーズン、<em>新入会員を募集します。</em></h2>
+      <p>海が好きな人なら、どなたでもOK。年会費2万円未満で、講習も乗船代も込み。初心者も経験者の艇で基礎から学べ、1シーズンで独り立ちも可能です。</p>
+    </div>
+    <div class="join-grid">
+      <div class="price-card reveal">
+        <h4>💳 会費のご案内</h4>
+        <div class="sub">講習・乗船代を含む／レンタル艇で気軽にスタート</div>
+        <div class="price-row"><span class="k">入会金<br><small style="color:rgba(255,255,255,.5);font-weight:500">男性</small></span><span class="v">¥10,000</span></div>
+        <div class="price-row"><span class="k">入会金<br><small style="color:rgba(255,255,255,.5);font-weight:500">女性</small></span><span class="v">¥0<small>無料</small></span></div>
+        <div class="price-row"><span class="k">年会費<br><small style="color:rgba(255,255,255,.5);font-weight:500">男性</small></span><span class="v">¥12,000</span></div>
+        <div class="price-row"><span class="k">年会費<br><small style="color:rgba(255,255,255,.5);font-weight:500">女性</small></span><span class="v">¥3,000</span></div>
+        <p class="join-note">※ 詳しい会則は入会時にご案内します。まずはお気軽にお問い合わせください。</p>
+      </div>
+      <div class="join-pitch reveal">
+        <h4 style="font-size:1.4rem;font-weight:800;margin-bottom:8px">風を操る衝撃を、<br>体感しませんか？</h4>
+        <ul>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3fd0d4"/><path d="M7 12.5 L10.5 16 L17 8.5" stroke="#04122f" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span><span class="hl">初心者も安心。</span>経験者の艇で基礎から学べます。</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3fd0d4"/><path d="M7 12.5 L10.5 16 L17 8.5" stroke="#04122f" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span><span class="hl">1シーズンで独り立ち</span>も十分可能です。</span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3fd0d4"/><path d="M7 12.5 L10.5 16 L17 8.5" stroke="#04122f" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>双胴船ならではの<span class="hl">加速と爽快感は一生モノ。</span></span></li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3fd0d4"/><path d="M7 12.5 L10.5 16 L17 8.5" stroke="#04122f" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>20代からベテランまで<span class="hl">「楽しさ」がモットー。</span></span></li>
+        </ul>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://form1ssl.fc2.com/form/?id=b3fd7f91f4f64539" target="_blank" rel="noopener">入会・体験を申し込む ▸</a>
+          <a class="btn btn-ghost" href="https://hobiecatngt.ojaru.jp/img/poster.gif" target="_blank" rel="noopener">案内ポスターを見る</a>
+        </div>
+        <p class="join-note">これから本格的なシーズンが始まります。最高の週末を、共に。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIARY ============ -->
+<section class="sec" id="diary">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Fleet Log</span>
+      <h2>フリート通信 <em>― 最近の活動</em></h2>
+      <p>毎週末の活動を、天気・参加者・レポートとともに記録しています。クラブのリアルな空気感が伝わるはずです。</p>
+    </div>
+    <div class="diary-list reveal">
+      <a class="diary" href="https://hobiecatngt.ojaru.jp/information26.html#260705" target="_blank" rel="noopener">
+        <div class="date">2026.07.05<small>くもり／北西2m</small></div>
+        <div><div class="ttl">キャリア格納庫の防水対策を実施</div><div class="meta">参加者少数のため航行は見送り。3人でコーキング作業に汗を流しました。</div></div>
+        <div class="go">読む →</div>
+      </a>
+      <a class="diary" href="https://hobiecatngt.ojaru.jp/information26.html#260627" target="_blank" rel="noopener">
+        <div class="date">2026.06.27<small>晴れ／北5m</small></div>
+        <div><div class="ttl">ダブル台風の影響無く、今シーズン最高のセイリング！</div><div class="meta">梅雨の晴れ間、絶好のコンディション。修理したトランポリンも復活。</div></div>
+        <div class="go">読む →</div>
+      </a>
+      <a class="diary" href="https://hobiecatngt.ojaru.jp/information26.html#260621" target="_blank" rel="noopener">
+        <div class="date">2026.06.21<small>雨天</small></div>
+        <div><div class="ttl">雨天クローズ</div><div class="meta">あいにくの天候によりクローズ。次回に期待。</div></div>
+        <div class="go">読む →</div>
+      </a>
+      <a class="diary" href="https://hobiecatngt.ojaru.jp/information26.html#260613-14" target="_blank" rel="noopener">
+        <div class="date">2026.06.13–14<small>宿泊イベント</small></div>
+        <div><div class="ttl">梅雨前の宿泊イベント</div><div class="meta">2日間にわたる恒例の宿泊イベントを開催しました。</div></div>
+        <div class="go">読む →</div>
+      </a>
+      <a class="diary" href="https://hobiecatngt.ojaru.jp/information26.html#260607" target="_blank" rel="noopener">
+        <div class="date">2026.06.07<small></small></div>
+        <div><div class="ttl">参加者少数のため不成立</div><div class="meta">この日は都合により活動を見送りました。</div></div>
+        <div class="go">読む →</div>
+      </a>
+    </div>
+    <div class="diary-foot reveal">
+      <a class="btn btn-dark" href="https://hobiecatngt.ojaru.jp/information26.html" target="_blank" rel="noopener">通信をすべて見る</a>
+      <a class="btn btn-dark" href="https://hobiecat-ngt.bbs.fc2.com/" target="_blank" rel="noopener" style="background:#0a2a5e">掲示板（どなたでもどうぞ）</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCESS ============ -->
+<section class="sec" id="access">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Access</span>
+      <h2>活動拠点 <em>― 新潟市 西海岸</em></h2>
+    </div>
+    <div class="access-grid">
+      <div class="access-info reveal">
+        <ul class="access-list">
+          <li><div class="ic">📍</div><div><b>新潟市 西海岸（通称：上新栄町浜）</b><span>2025年より活動拠点をこちらに移しました。日本海に面した砂浜がホームゲレンデです。</span></div></li>
+          <li><div class="ic">🗓️</div><div><b>活動シーズン：4月 〜 10月上旬</b><span>主に週末に活動。天候を見ながら開催しています。</span></div></li>
+          <li><div class="ic">✉️</div><div><b>お問い合わせ</b><span>メールフォームからお気軽にどうぞ。見学・体験も歓迎です。</span></div></li>
+        </ul>
+        <div class="weather-links">
+          <span style="font-size:.8rem;font-weight:800;color:var(--muted);align-self:center;letter-spacing:.1em">当日の海況チェック ▸</span>
+          <a href="https://tenki.jp/forecast/4/18/5410/15107/1hour.html" target="_blank" rel="noopener">tenki.jp</a>
+          <a href="https://weather.yahoo.co.jp/weather/tide/15/S6/" target="_blank" rel="noopener">Yahoo!潮汐</a>
+          <a href="https://www.umitenki.jp/tenki/1652/1hour" target="_blank" rel="noopener">海天気</a>
+        </div>
+      </div>
+      <a class="access-map reveal" href="https://www.google.co.jp/maps/@37.8904742,138.968505,216m/data=!3m1!1e3?hl=ja" target="_blank" rel="noopener">
+        <div class="pin">
+          <div>
+            <svg width="54" height="54" viewBox="0 0 24 24" fill="none" style="margin:0 auto 12px"><path d="M12 2 C7.6 2 4 5.6 4 10 c0 6 8 12 8 12 s8-6 8-12 c0-4.4-3.6-8-8-8Z" fill="#3fd0d4"/><circle cx="12" cy="10" r="3" fill="#04122f"/></svg>
+            <div style="font-weight:800;font-size:1.05rem">Google マップで開く</div>
+            <div style="font-size:.8rem;opacity:.7;margin-top:6px">37.8905, 138.9685</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="cta">
+  <div class="wrap">
+    <h2>さあ、<span class="accent">日本海の風</span>を<br>感じに行きましょう。</h2>
+    <p>初めての方も、経験者の方も。まずは一通のメッセージから。見学・体験、いつでも歓迎します。</p>
+    <div class="cta-btns">
+      <a class="btn btn-primary" href="https://form1ssl.fc2.com/form/?id=b3fd7f91f4f64539" target="_blank" rel="noopener">ヨット体験・入会のお問い合わせ ▸</a>
+      <a class="btn btn-ghost" href="#top">トップに戻る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <svg class="mark" viewBox="0 0 48 48" fill="none"><path d="M24 4 L38 34 H10 Z" fill="url(#lg2)"/><path d="M8 38 q6 4 12 0 t12 0 t12 0" stroke="#3fd0d4" stroke-width="2.4" fill="none"/><defs><linearGradient id="lg2" x1="10" y1="4" x2="38" y2="34"><stop stop-color="#31a8e0"/><stop offset="1" stop-color="#3fd0d4"/></linearGradient></defs></svg>
+          <span><b>HOBIE CAT</b><span style="letter-spacing:.28em">NIIGATA FLEET</span></span>
+        </a>
+        <p>“HOBIEシーサイドアウトドアクラブ”のヨット部門。新潟市・西海岸を拠点に、双胴ヨット「ホビーキャット」でセーリングを楽しむ非営利のクラブです。</p>
+      </div>
+      <div class="foot-col">
+        <h5>MENU</h5>
+        <a href="#about">クラブ紹介</a>
+        <a href="#activity">活動について</a>
+        <a href="#join">会員募集・会費</a>
+        <a href="#diary">フリート通信</a>
+        <a href="#access">アクセス</a>
+      </div>
+      <div class="foot-col">
+        <h5>LINK</h5>
+        <a href="https://form1ssl.fc2.com/form/?id=b3fd7f91f4f64539" target="_blank" rel="noopener">お問い合わせフォーム ↗</a>
+        <a href="https://hobiecat-ngt.bbs.fc2.com/" target="_blank" rel="noopener">掲示板（BBS）↗</a>
+        <a href="https://www.youtube.com/watch?v=27ojzS32ZM8" target="_blank" rel="noopener">YouTube ↗</a>
+        <a href="https://www.hobiecat.com/" target="_blank" rel="noopener">HOBIE CAT 公式 ↗</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>Copyright © 2002–2026 HOBIE CAT 新潟フリート All Rights Reserved.</span>
+      <span>日本海の風とともに ⛵</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll state
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>60);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // mobile menu
+  const nav=document.getElementById('nav'),mb=document.getElementById('menuBtn');
+  mb.addEventListener('click',()=>{nav.classList.toggle('open');hdr.classList.toggle('menuopen');});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');hdr.classList.remove('menuopen');}));
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.08)+'s';io.observe(el);});
+</script>
+</body>
+</html>
