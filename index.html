@@ -46,10 +46,13 @@
   /* ---------- header ---------- */
   header{position:fixed;top:0;left:0;right:0;z-index:60;transition:.35s}
   header .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-  .logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;letter-spacing:.04em;transition:color .35s}
-  .logo .mark{width:40px;height:40px;flex:none}
-  .logo b{font-size:1.05rem;line-height:1.2;display:block}
-  .logo span{font-size:.66rem;font-weight:600;letter-spacing:.28em;opacity:.8;display:block}
+  .logo{display:flex;align-items:center;gap:13px;color:#fff;font-weight:800;letter-spacing:.04em;transition:color .35s}
+  .logo .logo-img{height:34px;width:auto;display:block}
+  .logo .logo-img.blue{display:none}
+  header.scrolled .logo .logo-img.white{display:none}
+  header.scrolled .logo .logo-img.blue{display:block}
+  .logo .fleet{font-size:.9rem;font-weight:800;line-height:1.15;display:block;padding-left:13px;border-left:1.5px solid currentColor;opacity:.92}
+  .logo .fleet small{display:block;font-size:.56rem;font-weight:600;letter-spacing:.24em;opacity:.7}
   nav.main{display:flex;align-items:center;gap:30px}
   nav.main a.link{color:#fff;font-weight:600;font-size:.92rem;opacity:.9;transition:.25s;position:relative}
   nav.main a.link::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--cyan);transition:.3s}
@@ -224,8 +227,9 @@
 <header id="hdr">
   <div class="wrap bar">
     <a href="#top" class="logo">
-      <svg class="mark" viewBox="0 0 48 48" fill="none"><path d="M24 4 L38 34 H10 Z" fill="url(#lg)"/><path d="M24 10 L24 34" stroke="#fff" stroke-width="2" opacity=".6"/><path d="M8 38 q6 4 12 0 t12 0 t12 0" stroke="#3fd0d4" stroke-width="2.4" fill="none"/><defs><linearGradient id="lg" x1="10" y1="4" x2="38" y2="34"><stop stop-color="#31a8e0"/><stop offset="1" stop-color="#3fd0d4"/></linearGradient></defs></svg>
-      <span class="lt"><b>HOBIE CAT</b><span>NIIGATA FLEET</span></span>
+      <img class="logo-img white" src="img/hobie-cat-white.svg" alt="HOBIE CAT">
+      <img class="logo-img blue" src="img/hobie-cat-blue.svg" alt="" aria-hidden="true">
+      <span class="fleet">新潟フリート<small>NIIGATA FLEET</small></span>
     </a>
     <nav class="main" id="nav">
       <a class="link" href="#about">クラブ紹介</a>
@@ -481,8 +485,8 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="#top" class="logo">
-          <svg class="mark" viewBox="0 0 48 48" fill="none"><path d="M24 4 L38 34 H10 Z" fill="url(#lg2)"/><path d="M8 38 q6 4 12 0 t12 0 t12 0" stroke="#3fd0d4" stroke-width="2.4" fill="none"/><defs><linearGradient id="lg2" x1="10" y1="4" x2="38" y2="34"><stop stop-color="#31a8e0"/><stop offset="1" stop-color="#3fd0d4"/></linearGradient></defs></svg>
-          <span><b>HOBIE CAT</b><span style="letter-spacing:.28em">NIIGATA FLEET</span></span>
+          <img class="logo-img white" src="img/hobie-cat-white.svg" alt="HOBIE CAT" style="height:34px">
+          <span class="fleet">新潟フリート<small>NIIGATA FLEET</small></span>
         </a>
         <p>“HOBIEシーサイドアウトドアクラブ”のヨット部門。新潟市・西海岸を拠点に、双胴ヨット「ホビーキャット」でセーリングを楽しむ非営利のクラブです。</p>
       </div>
