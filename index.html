@@ -9,6 +9,32 @@
 <meta property="og:title" content="HOBIE CAT 新潟フリート">
 <meta property="og:description" content="日本海の風を操る。新潟のホビーキャット・セーリングクラブ。2026新入会員募集中。">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://nextrayjp.github.io/hobiecat-ngt/">
+<meta property="og:site_name" content="HOBIE CAT 新潟フリート">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://nextrayjp.github.io/hobiecat-ngt/img/ogp.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#04173a">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://nextrayjp.github.io/hobiecat-ngt/">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SportsClub",
+  "name":"HOBIE CAT 新潟フリート",
+  "alternateName":"HOBIEシーサイドアウトドアクラブ ヨット部門",
+  "url":"https://nextrayjp.github.io/hobiecat-ngt/",
+  "description":"新潟市西海岸を拠点に、双胴ヨット「ホビーキャット」でセーリングを楽しむヨットクラブ。初心者歓迎、2026シーズン新入会員募集中。",
+  "sport":"セーリング",
+  "areaServed":"新潟県",
+  "foundingDate":"1998",
+  "address":{"@type":"PostalAddress","addressLocality":"新潟市","addressRegion":"新潟県","addressCountry":"JP"},
+  "geo":{"@type":"GeoCoordinates","latitude":37.8904742,"longitude":138.968505},
+  "sameAs":["https://hobiecatngt.ojaru.jp/","https://hobiecat-ngt.bbs.fc2.com/"]
+}
+</script>
 <style>
   :root{
     --navy:#04173a;
@@ -32,7 +58,17 @@
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
   .wrap{width:min(1140px,92vw);margin-inline:auto}
-  section{position:relative}
+  section{position:relative;scroll-margin-top:84px}
+  ::selection{background:var(--cyan);color:#04122f}
+  :focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+  .skip{position:absolute;left:12px;top:-64px;z-index:100;background:#fff;color:var(--navy);
+        font-weight:800;padding:.8em 1.4em;border-radius:0 0 12px 12px;transition:top .25s}
+  .skip:focus{top:0}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+    .reveal{opacity:1;transform:none}
+  }
 
   /* ---------- buttons ---------- */
   .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:700;padding:.95em 1.9em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s;letter-spacing:.02em;font-size:.98rem;cursor:pointer;border:none}
@@ -58,6 +94,8 @@
   nav.main a.link::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--cyan);transition:.3s}
   nav.main a.link:hover{opacity:1}
   nav.main a.link:hover::after{width:100%}
+  nav.main a.link.active{opacity:1}
+  nav.main a.link.active::after{width:100%}
   header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 6px 24px -14px rgba(6,30,72,.4)}
   header.scrolled .logo,header.scrolled nav.main a.link{color:var(--ink)}
   header.scrolled .logo span{opacity:.55}
@@ -69,12 +107,17 @@
   /* ---------- hero ---------- */
   .hero{min-height:100vh;display:flex;align-items:center;color:#fff;position:relative;overflow:hidden;background:linear-gradient(160deg,#04122f 0%,#0a2a5e 45%,#12508f 100%)}
   .hero .sea{position:absolute;inset:0;z-index:0}
+  /* コピーの可読性を確保する左からのスクリム */
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(100deg,rgba(4,18,47,.82) 0%,rgba(4,18,47,.55) 42%,rgba(4,18,47,0) 72%)}
   .hero-content{position:relative;z-index:3;padding-top:90px}
   .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:26px}
   .eyebrow::before{content:"";width:34px;height:2px;background:var(--cyan)}
   .hero h1{font-size:clamp(2.5rem,6.4vw,4.9rem);font-weight:900;line-height:1.12;letter-spacing:.01em;text-shadow:0 6px 40px rgba(0,0,0,.35)}
   .hero h1 .accent{background:linear-gradient(100deg,var(--cyan),#9df6d6);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p.lead{font-size:clamp(1rem,1.7vw,1.2rem);max-width:37ch;margin:26px 0 40px;color:rgba(255,255,255,.9);line-height:1.9}
+  .hero p.lead{font-size:clamp(1rem,1.7vw,1.2rem);max-width:44ch;margin:26px 0 40px;color:rgba(255,255,255,.9);line-height:1.95;
+    /* 日本語の禁則・単語途中の改行を避ける */
+    line-break:strict;overflow-wrap:anywhere;text-wrap:pretty}
   .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
   .hero-stats{display:flex;gap:40px;margin-top:60px;flex-wrap:wrap}
   .hero-stats .st b{font-size:2rem;font-weight:900;color:#fff;display:block;line-height:1}
@@ -199,10 +242,9 @@
     .info-band .cell:nth-child(2){border-right:none}
     .info-band .cell{border-bottom:1px solid rgba(255,255,255,.09)}
     .foot-grid{grid-template-columns:1fr 1fr}
-  }
-  @media(max-width:640px){
-    nav.main{position:fixed;inset:0 0 0 auto;width:76%;max-width:320px;background:var(--navy);flex-direction:column;justify-content:center;align-items:flex-start;padding:40px;gap:22px;transform:translateX(100%);transition:.4s;box-shadow:-20px 0 60px rgba(0,0,0,.4)}
-    nav.main.open{transform:none}
+    /* --- mobile nav: 900px以下でハンバーガーに切替（タブレットでの折返し防止） --- */
+    nav.main{position:fixed;inset:0 0 0 auto;width:76%;max-width:320px;background:var(--navy);flex-direction:column;justify-content:center;align-items:flex-start;padding:40px;gap:22px;transform:translateX(100%);transition:.4s;box-shadow:-20px 0 60px rgba(0,0,0,.4);visibility:hidden}
+    nav.main.open{transform:none;visibility:visible}
     nav.main a.link{color:#fff!important;font-size:1.1rem}
     nav.main .nav-cta{margin-top:10px}
     .menu-btn{display:flex;z-index:70}
@@ -210,6 +252,10 @@
     header.menuopen .menu-btn span:nth-child(2){opacity:0}
     header.menuopen .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
     header.menuopen .menu-btn span{background:#fff!important}
+    .nav-scrim{position:fixed;inset:0;background:rgba(3,13,36,.55);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .35s;z-index:55}
+    header.menuopen ~ .nav-scrim{opacity:1;pointer-events:auto}
+  }
+  @media(max-width:640px){
     .sec{padding:80px 0}
     .feat-grid{grid-template-columns:1fr}
     .info-band{grid-template-columns:1fr}
@@ -218,10 +264,13 @@
     .diary .go{display:none}
     .foot-grid{grid-template-columns:1fr}
     .hero-stats{gap:26px}
+    .scroll-ind{display:none} /* 実績数値と重なるため非表示 */
   }
 </style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
+<a class="skip" href="#about">本文へスキップ</a>
 
 <!-- ============ HEADER ============ -->
 <header id="hdr">
@@ -231,7 +280,7 @@
       <img class="logo-img blue" src="img/hobie-cat-blue.svg" alt="" aria-hidden="true">
       <span class="fleet">新潟フリート<small>NIIGATA FLEET</small></span>
     </a>
-    <nav class="main" id="nav">
+    <nav class="main" id="nav" aria-label="メインナビゲーション">
       <a class="link" href="#about">クラブ紹介</a>
       <a class="link" href="#activity">活動</a>
       <a class="link" href="#join">会員募集</a>
@@ -239,9 +288,10 @@
       <a class="link" href="#access">アクセス</a>
       <a class="btn btn-primary nav-cta" href="https://form1ssl.fc2.com/form/?id=b3fd7f91f4f64539" target="_blank" rel="noopener">お問い合わせ</a>
     </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
   </div>
 </header>
+<div class="nav-scrim" id="navScrim" aria-hidden="true"></div>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
@@ -254,8 +304,8 @@
       <rect width="1440" height="900" fill="url(#sky)"/>
       <circle cx="1180" cy="180" r="70" fill="#dff6ff" opacity=".14"/>
       <circle cx="1180" cy="180" r="46" fill="#eafcff" opacity=".16"/>
-      <!-- sailboat -->
-      <g class="sail" transform="translate(300 430)">
+      <!-- sailboat（テキストと重ならないよう右手に配置） -->
+      <g class="sail" transform="translate(1050 470)">
         <path d="M0 0 L0 -150 L108 0 Z" fill="#3fd0d4" opacity=".92"/>
         <path d="M-6 0 L-6 -132 L-92 0 Z" fill="#9df6d6" opacity=".82"/>
         <rect x="-3" y="-152" width="4" height="158" fill="#eafcff" opacity=".7"/>
@@ -520,13 +570,38 @@
   onScroll();window.addEventListener('scroll',onScroll,{passive:true});
 
   // mobile menu
-  const nav=document.getElementById('nav'),mb=document.getElementById('menuBtn');
-  mb.addEventListener('click',()=>{nav.classList.toggle('open');hdr.classList.toggle('menuopen');});
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');hdr.classList.remove('menuopen');}));
+  const nav=document.getElementById('nav'),mb=document.getElementById('menuBtn'),scrim=document.getElementById('navScrim');
+  const setMenu=(open)=>{
+    nav.classList.toggle('open',open);
+    hdr.classList.toggle('menuopen',open);
+    mb.setAttribute('aria-expanded',String(open));
+    mb.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
+    document.body.style.overflow=open?'hidden':'';
+  };
+  mb.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));
+  scrim.addEventListener('click',()=>setMenu(false));
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){setMenu(false);mb.focus();}});
+  // 画面幅がデスクトップに戻ったら状態をリセット（スクロールロック残り防止）
+  matchMedia('(min-width:901px)').addEventListener('change',e=>{if(e.matches)setMenu(false);});
 
   // reveal on scroll
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.14});
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.08)+'s';io.observe(el);});
+
+  // 現在地に応じてナビをハイライト
+  const links=[...nav.querySelectorAll('a.link')];
+  const spy=new IntersectionObserver((es)=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting)return;
+      links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  links.forEach(l=>{const t=document.querySelector(l.getAttribute('href'));if(t)spy.observe(t);});
+  // ヒーロー表示中はどの項目もアクティブにしない
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY<120)links.forEach(l=>l.classList.remove('active'));
+  },{passive:true});
 </script>
 </body>
 </html>
