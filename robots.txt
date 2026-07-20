@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nextrayjp.github.io/hobiecat-ngt/sitemap.xml
