@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://nextrayjp.github.io/hobiecat-ngt/</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/hero-fleet.jpg</image:loc>
+      <image:title>上新栄町浜に並ぶホビーキャット4艇と日本海</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-beach-two-boats.jpg</image:loc>
+      <image:title>砂浜に並ぶホビーキャット2艇（上新栄町浜）</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-launch-surf.jpg</image:loc>
+      <image:title>波打ち際から出艇するホビーキャット</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-sailing-action.jpg</image:loc>
+      <image:title>風を受けて帆走するホビーキャット</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-sailor-pov.jpg</image:loc>
+      <image:title>トランポリンに乗るメンバー</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-pov-fleet.jpg</image:loc>
+      <image:title>並走する艇団セイリング</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-rigging-hands.jpg</image:loc>
+      <image:title>セイルを艤装するメンバーの手元</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-sailing-number.jpg</image:loc>
+      <image:title>セイルナンバーを掲げたホビーキャット</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-beach-vista.jpg</image:loc>
+      <image:title>上新栄町浜の砂浜と日本海</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-sailing-solo.jpg</image:loc>
+      <image:title>沖を走るホビーキャット</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-camp-cooking.jpg</image:loc>
+      <image:title>浜で食事を用意するメンバー</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nextrayjp.github.io/hobiecat-ngt/img/photos/g-sailing-blue.jpg</image:loc>
+      <image:title>日本海を滑走するホビー16</image:title>
+    </image:image>
   </url>
 </urlset>
