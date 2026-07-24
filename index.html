@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HOBIE CAT 新潟フリート｜日本海の風を操るセーリングクラブ</title>
-<meta name="description" content="新潟市上新栄町海岸を拠点に、ホビーキャット（双胴カタマラン）でセーリングを楽しむヨットクラブ。初心者歓迎。2026シーズンの新入会員を募集中。">
-<meta name="keywords" content="ヨット,ディンギー,カタマラン,ホビーキャット,HOBIE CAT,新潟,ヨットクラブ,セイリング,マリンスポーツ,日本海,双胴艇">
+<meta name="description" content="新潟市西蒲区・上新栄町海岸を拠点に、双胴艇ヨット「ホビーキャット」でセーリングを楽しむ非営利のヨットクラブ。初心者歓迎。2026シーズンの新入会員を募集中。">
+<meta name="keywords" content="ヨット,ディンギー,カタマラン,ホビーキャット,HOBIE CAT,新潟,新潟市西蒲区,上新栄町海岸,ヨットクラブ,セイリング,マリンスポーツ,日本海,双胴艇">
 <meta property="og:title" content="HOBIE CAT 新潟フリート">
 <meta property="og:description" content="日本海の風を操る。新潟のホビーキャット・セーリングクラブ。2026新入会員募集中。">
 <meta property="og:type" content="website">
@@ -17,7 +17,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="HOBIE CAT 新潟フリート｜日本海の風を操るセーリングクラブ">
-<meta name="twitter:description" content="新潟市上新栄町海岸を拠点に、双胴ヨット「ホビーキャット」でセーリングを楽しむヨットクラブ。初心者歓迎、2026シーズン新入会員募集中。">
+<meta name="twitter:description" content="新潟市西蒲区・上新栄町海岸を拠点に、双胴艇ヨット「ホビーキャット」でセーリングを楽しむヨットクラブ。初心者歓迎、2026シーズン新入会員募集中。">
 <meta name="twitter:image" content="https://nextrayjp.github.io/hobiecat-ngt/img/photos/hero-fleet.jpg">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#04173a">
@@ -30,15 +30,14 @@
   "@context":"https://schema.org",
   "@type":"SportsClub",
   "name":"HOBIE CAT 新潟フリート",
-  "alternateName":"HOBIEシーサイドアウトドアクラブ ヨット部門",
   "url":"https://nextrayjp.github.io/hobiecat-ngt/",
-  "description":"新潟市上新栄町海岸を拠点に、双胴ヨット「ホビーキャット」でセーリングを楽しむヨットクラブ。初心者歓迎、2026シーズン新入会員募集中。",
+  "description":"新潟市西蒲区・上新栄町海岸を拠点に、双胴艇ヨット「ホビーキャット」でセーリングを楽しむ非営利のヨットクラブ。初心者歓迎、2026シーズン新入会員募集中。",
   "sport":"セーリング",
   "areaServed":"新潟県",
   "foundingDate":"1981",
   "image":"https://nextrayjp.github.io/hobiecat-ngt/img/photos/hero-fleet.jpg",
   "logo":"https://nextrayjp.github.io/hobiecat-ngt/img/favicon.svg",
-  "address":{"@type":"PostalAddress","addressLocality":"新潟市","addressRegion":"新潟県","addressCountry":"JP"},
+  "address":{"@type":"PostalAddress","streetAddress":"上新栄町海岸","addressLocality":"新潟市西蒲区","addressRegion":"新潟県","addressCountry":"JP"},
   "geo":{"@type":"GeoCoordinates","latitude":37.8904742,"longitude":138.968505},
   "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"validFrom":"2026-04-01","validThrough":"2026-10-10"},
   "sameAs":["https://hobiecatngt.ojaru.jp/","https://hobiecat-ngt.bbs.fc2.com/","https://www.youtube.com/watch?v=27ojzS32ZM8"]
@@ -165,6 +164,14 @@
   .about-copy .name-tip{background:#fff;border-left:4px solid var(--cyan);padding:16px 20px;border-radius:0 12px 12px 0;font-size:.95rem;color:#455;box-shadow:var(--shadow)}
   .about-visual{position:relative;aspect-ratio:4/3.4;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#0a2a5e,#12508f);box-shadow:var(--shadow)}
   .about-visual img{width:100%;height:100%;object-fit:cover}
+  /* 3枚スライドショー（4秒ごとにフェード切替） */
+  .about-visual .slides{position:absolute;inset:0}
+  .about-visual .slides img{position:absolute;inset:0;opacity:0;transition:opacity 1s ease}
+  .about-visual .slides img.on{opacity:1}
+  .about-visual .dots{position:absolute;right:16px;bottom:16px;z-index:3;display:flex;gap:7px}
+  .about-visual .dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);transition:.3s}
+  .about-visual .dots i.on{background:#fff;width:20px;border-radius:4px}
+  @media(prefers-reduced-motion:reduce){.about-visual .slides img{transition:none}}
   .about-visual .tag{position:absolute;left:20px;bottom:20px;z-index:2;background:rgba(255,255,255,.94);padding:12px 18px;border-radius:12px;font-weight:800;font-size:.9rem;color:var(--navy)}
   .about-visual .tag small{display:block;font-weight:600;color:var(--muted);font-size:.72rem;letter-spacing:.1em}
 
@@ -197,6 +204,16 @@
   .gal a.big .cap{font-size:1rem}
   .gal-note{margin-top:26px;font-size:.86rem;color:var(--muted)}
 
+  /* video modal */
+  .vmodal{position:fixed;inset:0;z-index:130;background:rgba(3,13,36,.94);display:grid;place-items:center;padding:24px;
+      opacity:0;pointer-events:none;transition:opacity .3s}
+  .vmodal.open{opacity:1;pointer-events:auto}
+  .vframe{width:min(960px,94vw);aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+  .vframe iframe{width:100%;height:100%;border:0;display:block}
+  .vmodal .vclose{position:absolute;top:22px;right:22px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);
+    color:#fff;width:52px;height:52px;border-radius:50%;cursor:pointer;font-size:1.2rem;display:grid;place-items:center;transition:.25s}
+  .vmodal .vclose:hover{background:rgba(255,255,255,.26)}
+
   /* lightbox */
   .lb{position:fixed;inset:0;z-index:120;background:rgba(3,13,36,.94);display:grid;place-items:center;padding:24px;
       opacity:0;pointer-events:none;transition:opacity .3s}
@@ -221,7 +238,8 @@
   .price-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:38px 34px;backdrop-filter:blur(6px)}
   .price-card h4{font-size:1.15rem;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:10px}
   .price-card .sub{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:26px}
-  .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px dashed rgba(255,255,255,.16)}
+  .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.16)}
+  .price-row .k small{line-height:1.2}
   .price-row:last-child{border-bottom:none}
   .price-row .k{font-weight:600;color:rgba(255,255,255,.85)}
   .price-row .v{font-weight:900;font-size:1.5rem}
@@ -388,11 +406,16 @@
         <div class="name-tip">🐈 少しでも興味を持ったら、まずは一度、海に遊びに来てください。実際のホビーキャットに近寄って見るのがいちばんの近道です。</div>
         <div style="margin-top:26px;display:flex;gap:14px;flex-wrap:wrap">
           <a class="btn btn-dark" href="https://www.hobie.com/sail/hobie-16/" target="_blank" rel="noopener">Hobie 16 公式紹介 ↗</a>
-          <a class="btn btn-dark" href="https://www.youtube.com/watch?v=27ojzS32ZM8" target="_blank" rel="noopener" style="background:#c0392b">▶ 走行動画（YouTube）</a>
+          <button class="btn btn-dark" id="videoBtn" type="button" style="background:#c0392b">▶ 走行動画を見る</button>
         </div>
       </div>
       <div class="about-visual reveal">
-        <img src="img/photos/g-sailing-blue.jpg" alt="日本海を滑走するホビー16" loading="lazy" decoding="async">
+        <div class="slides" id="aboutSlides">
+          <img class="on" src="img/photos/g-sailing-blue.jpg" alt="日本海を滑走するホビー16" loading="lazy" decoding="async">
+          <img src="img/photos/g-sailing-action.jpg" alt="風を受けて帆走するホビーキャット" loading="lazy" decoding="async">
+          <img src="img/photos/g-sailing-solo.jpg" alt="沖を走るホビーキャット" loading="lazy" decoding="async">
+        </div>
+        <div class="dots" id="aboutDots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
         <div class="tag">Hobie 16<small>OUR MAIN CLASS</small></div>
       </div>
     </div>
@@ -429,7 +452,10 @@
       <a href="img/photos/g-camp-cooking.jpg" data-cap="浜での食事も恒例。海の上だけがクラブじゃありません">
         <img src="img/photos/g-camp-cooking.jpg" alt="浜で食事を用意するメンバー" loading="lazy" decoding="async"></a>
     </div>
-    <p class="gal-note reveal">写真はすべてクラブの活動記録より。もっと見たい方は <a href="https://hobiecatngt.ojaru.jp/information26.html" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:underline">フリート通信</a> に毎週のウェブアルバムを掲載しています。</p>
+    <p class="gal-note reveal">写真はすべてクラブの活動記録より。毎週のウェブアルバムは下記に掲載しています。</p>
+    <div class="reveal" style="margin-top:16px">
+      <a class="btn btn-primary" href="https://hobiecatngt.ojaru.jp/information26.html" target="_blank" rel="noopener" style="font-size:1.08rem">📸 フリート通信で「もっと見る」 ▸</a>
+    </div>
   </div>
 </section>
 
@@ -462,9 +488,8 @@
         </ul>
         <div style="display:flex;gap:14px;flex-wrap:wrap">
           <a class="btn btn-primary" href="https://form1ssl.fc2.com/form/?id=b3fd7f91f4f64539" target="_blank" rel="noopener">入会のお問い合わせ ▸</a>
-          <a class="btn btn-ghost" href="https://hobiecatngt.ojaru.jp/img/poster.gif" target="_blank" rel="noopener">案内ポスターを見る</a>
         </div>
-        <p class="join-note">これから本格的なシーズンが始まります。最高の週末を、共に。</p>
+        <p class="join-note">本格的なシーズンです。最高の週末を、共に。</p>
       </div>
     </div>
   </div>
@@ -527,24 +552,23 @@
     <div class="access-grid">
       <div class="access-info reveal">
         <ul class="access-list">
-          <li><div class="ic">📍</div><div><b>新潟市 上新栄町海岸</b><span>2025年より活動拠点をこちらに移しました。日本海に面した砂浜がホームゲレンデです。</span></div></li>
+          <li><div class="ic">📍</div><div><b>新潟市西蒲区 上新栄町海岸</b><span>2025年より活動拠点をこちらに移しました。日本海に面した砂浜がホームゲレンデです。</span></div></li>
           <li><div class="ic">🗓️</div><div><b>活動シーズン：4月 〜 10月上旬</b><span>主に週末に活動。天候を見ながら開催しています。</span></div></li>
-          <li><div class="ic">✉️</div><div><b>お問い合わせ</b><span>メールフォームからお気軽にどうぞ。見学も歓迎です。</span></div></li>
+          <li><div class="ic">✉️</div><div><b>お問い合わせ</b><span>下のボタンからメールフォームへ。<a href="https://form1ssl.fc2.com/form/?id=b3fd7f91f4f64539" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700;text-decoration:underline">お問い合わせフォームを開く ↗</a>。見学も歓迎です。</span></div></li>
         </ul>
         <div class="weather-links">
           <span style="font-size:.8rem;font-weight:800;color:var(--muted);align-self:center;letter-spacing:.1em">当日の海況チェック ▸</span>
           <a href="https://tenki.jp/forecast/4/18/5410/15107/1hour.html" target="_blank" rel="noopener">tenki.jp</a>
-          <a href="https://weather.yahoo.co.jp/weather/tide/15/S6/" target="_blank" rel="noopener">Yahoo!潮汐</a>
           <a href="https://www.umitenki.jp/tenki/1652/1hour" target="_blank" rel="noopener">海天気</a>
         </div>
       </div>
-      <a class="access-map reveal" href="https://www.google.co.jp/maps/@37.8904742,138.968505,216m/data=!3m1!1e3?hl=ja" target="_blank" rel="noopener">
+      <a class="access-map reveal" href="https://hobiecatngt.ojaru.jp/introduction.html" target="_blank" rel="noopener">
         <img src="img/photos/g-beach-two-boats.jpg" alt="上新栄町海岸の砂浜とホビーキャット" loading="lazy" decoding="async">
         <div class="pin">
           <div>
             <svg width="54" height="54" viewBox="0 0 24 24" fill="none" style="margin:0 auto 12px"><path d="M12 2 C7.6 2 4 5.6 4 10 c0 6 8 12 8 12 s8-6 8-12 c0-4.4-3.6-8-8-8Z" fill="#3fd0d4"/><circle cx="12" cy="10" r="3" fill="#04122f"/></svg>
-            <div style="font-weight:800;font-size:1.05rem">Google マップで開く</div>
-            <div style="font-size:.8rem;opacity:.7;margin-top:6px">37.8905, 138.9685</div>
+            <div style="font-weight:800;font-size:1.05rem">アクセスマップを見る ↗</div>
+            <div style="font-size:.8rem;opacity:.75;margin-top:6px">クラブ紹介ページ（どこでやってるの？）</div>
           </div>
         </div>
       </a>
@@ -574,7 +598,7 @@
           <img class="logo-img white" src="img/hobie-cat-white.svg" alt="HOBIE CAT" style="height:34px">
           <span class="fleet">新潟フリート<small>NIIGATA FLEET</small></span>
         </a>
-        <p>“HOBIEシーサイドアウトドアクラブ”のヨット部門。新潟市上新栄町海岸を拠点に、双胴ヨット「ホビーキャット」でセーリングを楽しむ非営利のクラブです。</p>
+        <p>新潟市上新栄町海岸を中心に、双胴艇ヨット「ホビーキャット」でセーリングを楽しむ非営利のクラブ団体です。</p>
       </div>
       <div class="foot-col">
         <h5>MENU</h5>
@@ -598,6 +622,12 @@
     </div>
   </div>
 </footer>
+
+<!-- ============ VIDEO MODAL ============ -->
+<div class="vmodal" id="vmodal" role="dialog" aria-modal="true" aria-label="走行動画">
+  <button class="vclose" id="vClose" aria-label="閉じる">✕</button>
+  <div class="vframe" id="vFrame"></div>
+</div>
 
 <!-- ============ LIGHTBOX ============ -->
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="写真の拡大表示">
@@ -635,6 +665,34 @@
   // reveal on scroll
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.14});
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.08)+'s';io.observe(el);});
+
+  // 走行動画モーダル（埋め込み再生。外部YouTubeの投稿日表示を避ける）
+  (function(){
+    const btn=document.getElementById('videoBtn'),vm=document.getElementById('vmodal'),
+          vf=document.getElementById('vFrame'),vc=document.getElementById('vClose');
+    if(!btn)return;
+    const EMBED='https://www.youtube-nocookie.com/embed/27ojzS32ZM8?rel=0&modestbranding=1&playsinline=1&autoplay=1';
+    const open=()=>{vf.innerHTML='<iframe src="'+EMBED+'" title="ホビーキャット走行動画" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
+      vm.classList.add('open');document.body.style.overflow='hidden';vc.focus();};
+    const close=()=>{vm.classList.remove('open');vf.innerHTML='';document.body.style.overflow='';btn.focus();};
+    btn.addEventListener('click',open);
+    vc.addEventListener('click',close);
+    vm.addEventListener('click',e=>{if(e.target===vm)close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&vm.classList.contains('open'))close();});
+  })();
+
+  // クラブ紹介の3枚スライドショー（4秒ごと）
+  (function(){
+    const slides=[...document.querySelectorAll('#aboutSlides img')];
+    const dots=[...document.querySelectorAll('#aboutDots i')];
+    if(slides.length<2)return;
+    let i=0;
+    setInterval(()=>{
+      slides[i].classList.remove('on');dots[i]&&dots[i].classList.remove('on');
+      i=(i+1)%slides.length;
+      slides[i].classList.add('on');dots[i]&&dots[i].classList.add('on');
+    },4000);
+  })();
 
   // ギャラリーのライトボックス
   const gal=document.getElementById('gal'),lb=document.getElementById('lb'),
